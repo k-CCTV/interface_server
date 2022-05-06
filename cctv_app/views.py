@@ -41,7 +41,7 @@ def edit(request, id):
             board.save()
             return HttpResponseRedirect(reverse('detail'))
       else:
-        return render(request, 'post.html')
+        return render(request, 'edit.html')
   
 @csrf_exempt
 def delete(request,id):
