@@ -37,9 +37,8 @@ def edit(request, id):
             board.author = request.POST['author']
             board.title = request.POST['title']
             board.content = request.POST['content']
-            board.modified_date = timezone.now()
             board.save()
-            return HttpResponseRedirect(reverse('detail'))
+            return HttpResponseRedirect(reverse('index'))
       else:
         return render(request, 'edit.html')
   
