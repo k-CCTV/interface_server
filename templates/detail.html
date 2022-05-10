@@ -28,6 +28,10 @@
               >{{ board.created_date | date:"Y-m-d h:i" }}</small
             >
           </p>
+          {% if board.image %}
+          <img src="{{board.image.url}}" />
+          <br /><br />
+          {% endif %}
           <p class="card-text">{{ board.content }}</p>
         </div>
       </div>

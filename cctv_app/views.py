@@ -13,10 +13,11 @@ def index(request):
 def post(request):
     print("post 시작--------------")
     if request.method == "POST":
-        author = request.POST['author']
-        title = request.POST['title']
-        content = request.POST['content']
-        board = Board(author=author, title=title, content=content)
+        board = Board()
+        board.author = request.POST['author']
+        board.title = request.POST['title']
+        board.content = request.POST['content']
+        board.image = request.FILES.get('image')
         board.save()
         return HttpResponseRedirect(reverse('index'))
     else:
@@ -37,6 +38,10 @@ def edit(request, id):
             board.author = request.POST['author']
             board.title = request.POST['title']
             board.content = request.POST['content']
+            try:
+                board.image = request.FILES['image']
+            except:
+                board.image = None
             board.save()
             return HttpResponseRedirect(reverse('index'))
       else:

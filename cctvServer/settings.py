@@ -15,8 +15,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+# BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -27,14 +27,6 @@ SECRET_KEY = 'django-insecure-=egy36apl=8m)gzw)!uzc5wk@k7f)bgo6nkea&ef2*7hi$4hhv
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# 경로 저장~~~
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Application definition
 
@@ -131,8 +123,17 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
