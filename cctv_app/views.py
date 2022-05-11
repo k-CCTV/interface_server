@@ -18,6 +18,8 @@ def post(request):
         board.title = request.POST['title']
         board.content = request.POST['content']
         board.image = request.FILES.get('image')
+        if board.image == None:
+             raise Http404("이미지 넣어야 함!")
         board.save()
         return HttpResponseRedirect(reverse('index'))
     else:
@@ -38,10 +40,9 @@ def edit(request, id):
             board.author = request.POST['author']
             board.title = request.POST['title']
             board.content = request.POST['content']
-            try:
-                board.image = request.FILES['image']
-            except:
-                board.image = None
+            board.image = request.FILES.get('image')
+            if board.image == None:
+                 raise Http404("이미지 넣어야 함!")
             board.save()
             return HttpResponseRedirect(reverse('index'))
       else:
