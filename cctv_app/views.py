@@ -57,5 +57,9 @@ def delete(request,id):
             return HttpResponseRedirect(reverse('index'))
       except:
             raise Http404("Does not exist!")
+        
+def test(request):
+    return render(request,'test.html')
+
             
       
