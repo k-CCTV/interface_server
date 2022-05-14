@@ -1,3 +1,4 @@
+from fileinput import filename
 from time import timezone
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
@@ -20,6 +21,8 @@ def post(request):
         board.image = request.FILES.get('image')
         if board.image == None:
              raise Http404("이미지 넣어야 함!")
+        fileName = os.path.splitext(board.image.url)[1]
+        board.fileType = fileName
         board.save()
         return HttpResponseRedirect(reverse('index'))
     else:
@@ -43,6 +46,7 @@ def edit(request, id):
             board.image = request.FILES.get('image')
             if board.image == None:
                  raise Http404("이미지 넣어야 함!")
+            fileName = os.path.splitext(board.image.url)[1]
             board.save()
             return HttpResponseRedirect(reverse('index'))
       else:

@@ -30,7 +30,12 @@
               >{{ board.created_date | date:"Y-m-d h:i" }}</small
             >
           </p>
-          {% if board.image %}
+          {% if board.fileType == ".mp4" %}
+          <video controls autoplay>
+            <source src="{{board.image.url}}" type="video/mp4" />
+            영상 안돼!
+          </video>
+          {% else %}
           <img src="{{board.image.url}}" />
           <br /><br />
           {% endif %}
