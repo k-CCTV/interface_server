@@ -23,8 +23,8 @@
 
 .light:root {
   --app-bg: #fff;
-  --sidebar: #f3f6fd;
-  --app-content-secondary-color: #f3f6fd;
+  --sidebar: #e9ecef;
+  --app-content-secondary-color: #e9ecef;
   --app-content-main-color: #1f1c2e;
   --sidebar-link: #1f1c2e;
   --sidebar-hover-link: rgba(195, 207, 244, 0.5);
@@ -500,32 +500,32 @@ body {
   margin-right: 4px;
 }
 .status.normal {
-  color: #2ba972;
-  background-color: rgba(43, 169, 114, 0.2);
+  color: white;
+  background-color: green;
 }
 .status.normal:before {
-  background-color: #2ba972;
+  background-color: white;
 }
 .status.disabled {
-  color: #59719d;
-  background-color: rgba(89, 113, 157, 0.2);
+  color: white;
+  background-color: grey;
 }
 .status.disabled:before {
-  background-color: #59719d;
+  background-color: white;
 }
 .status.danger:before {
-  background-color: #b10101;
+  background-color: white;
 }
 .status.danger {
-  color: #b10101;
-  background-color: #f80000;
+  color: white;
+  background-color: red;
 }
 .status.warn:before {
-  background-color: #fbff05;
+  background-color: white;
 }
 .status.warn {
-  color: #fbff05;
-  background-color: #a0a723;
+  color: white;
+  background-color: orange;
 }
 .gridView {
   display: flex;

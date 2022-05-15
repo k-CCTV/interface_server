@@ -3,12 +3,12 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>지능형 CCTV</title>
+    <title>test</title>
     <link
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     />
-    <link rel="stylesheet" href="{%static 'jsCss/list.css'%}" />
+    <link rel="stylesheet" href="{%static 'jsCss/test.css'%}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -18,49 +18,50 @@
     />
   </head>
   <body>
-    <div class="container">
-      <video controls autoplay>
-        <source src="/media/video/testVideo.mp4" type="video/mp4" />
-        영상 안돼!
-      </video>
-      <table class="table">
-        <thead class="thead-light">
-          <tr class="text-center">
-            <th scope="col"><i class="fa-solid fa-video"></i></th>
-            <th scope="col">제목</th>
-            <th scope="col">작성자</th>
-            <th scope="col">작성일</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for board in boards %}
-          <tr class="text-center">
-            <th scope="row">
-              <span>{{ board.id }}</span>
-            </th>
-            <td>
-              <a href="/post/{{ board.id }}">
-                <span>{{ board.title }}</span>
-              </a>
-            </td>
-            <td>
-              <span>{{ board.author }}</span>
-            </td>
-            <td>
-              <span>{{ board.created_date | date:"Y-m-d h:i" }}</span>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      <div class="row">
-        <div class="col-auto mr-auto"></div>
-        <div class="col-auto">
-          <a class="btn btn-primary" href="/post" role="button"
-            >영상 등록하기</a
-          >
+    <div class="form-box">
+      <h2>Image Upoad</h2>
+      <form action="/post" method="post" enctype="multipart/form-data">
+        <div class="user-box">
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            id="inputTitle"
+            required=""
+          />
+          <label>제목</label>
         </div>
-      </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="author"
+            class="form-control"
+            id="inputAuthor"
+            required=""
+          />
+          <label>작성자</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="content"
+            class="form-control"
+            id="inputContent"
+            required=""
+          />
+          <label>내용</label>
+        </div>
+        <div class="user-box">
+          <input type="file" name="image" required="" />
+        </div>
+        <a href="/">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </form>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
