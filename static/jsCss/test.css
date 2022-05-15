@@ -514,10 +514,10 @@ body {
   background-color: #59719d;
 }
 .status.danger:before {
-  background-color: #921818;
+  background-color: #b10101;
 }
 .status.danger {
-  color: #921818;
+  color: #b10101;
   background-color: #f80000;
 }
 .status.warn:before {
@@ -525,7 +525,7 @@ body {
 }
 .status.warn {
   color: #fbff05;
-  background-color: #a6ad20;
+  background-color: #eef473;
 }
 .gridView {
   display: flex;
