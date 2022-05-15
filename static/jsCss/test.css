@@ -445,23 +445,23 @@ body {
   }
 }
 @media screen and (max-width: 520px) {
-  .tableView .product-cell.category,
-  .tableView .product-cell.sales {
+  .tableView .product-cell.author,
+  .tableView .product-cell.content {
     display: none;
   }
   .tableView .product-cell.status-cell {
     flex: 0.4;
   }
-  .tableView .product-cell.stock,
-  .tableView .product-cell.price {
+  .tableView .product-cell.created_date,
+  .tableView .product-cell.modified_date {
     flex: 0.2;
   }
 }
 @media screen and (max-width: 480px) {
-  .tableView .product-cell.stock {
+  .tableView .product-cell.created_date {
     display: none;
   }
-  .tableView .product-cell.price {
+  .tableView .product-cell.modified_date {
     flex: 0.4;
   }
 }
@@ -478,7 +478,7 @@ body {
 .tableView .sort-button:hover {
   color: var(--action-color);
 }
-.tableView .sort-button svg {
+.tableView .sort-button span {
   width: 12px;
 }
 .tableView .cell-label {
@@ -499,11 +499,11 @@ body {
   border-radius: 50%;
   margin-right: 4px;
 }
-.status.active {
+.status.normal {
   color: #2ba972;
   background-color: rgba(43, 169, 114, 0.2);
 }
-.status.active:before {
+.status.normal:before {
   background-color: #2ba972;
 }
 .status.disabled {
@@ -513,7 +513,20 @@ body {
 .status.disabled:before {
   background-color: #59719d;
 }
-
+.status.danger:before {
+  background-color: #921818;
+}
+.status.danger {
+  color: #921818;
+  background-color: #f80000;
+}
+.status.warn:before {
+  background-color: #fbff05;
+}
+.status.warn {
+  color: #fbff05;
+  background-color: #a6ad20;
+}
 .gridView {
   display: flex;
   flex-wrap: wrap;

@@ -10,6 +10,7 @@ class Board(models.Model):
     modified_date = models.DateTimeField(auto_now=True)
     image = models.ImageField(null= False, upload_to = "images/")
     fileType = models.CharField(max_length=10, null= True)
+    status = models.IntegerField(default=0,null=False)
 
     def __str__(self):
         return str(self.title)
