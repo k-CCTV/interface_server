@@ -19,8 +19,9 @@
   </head>
   <body>
     <div class="form-box">
-      <h2>Image Upoad</h2>
-      <form action="/post" method="post" enctype="multipart/form-data">
+      <h2>Image Uproad</h2>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="user-box">
           <input
             type="text"
@@ -54,13 +55,12 @@
         <div class="user-box">
           <input type="file" name="image" required="" />
         </div>
-        <a href="/">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Submit
-        </a>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          role="button"
+          value="등록하기"
+        />
       </form>
     </div>
     <script

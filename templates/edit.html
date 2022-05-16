@@ -8,79 +8,67 @@
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     />
+    <link rel="stylesheet" href="{%static 'jsCss/post.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header>
-      <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
-        <div class="container d-flex justify-content-between">
-          <a href="/" class="navbar-brand d-flex align-items-center">
-            <strong>CCTV updeate</strong>
-          </a>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <form action="" method="post" enctype='multipart/form-data'>
+    <div class="form-box">
+      <h2>Image Update</h2>
+      <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="form-group row">
-          <label for="inputTitle" class="col-sm-2 col-form-label"
-            ><strong>제목</strong></label
-          >
-          <div class="col-sm-10">
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="inputTitle"
-            />
-          </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            id="inputTitle"
+            required=""
+          />
+          <label>제목</label>
         </div>
-        <div class="form-group row">
-          <label for="inputAuthor" class="col-sm-2 col-form-label"
-            ><strong>작성자</strong></label
-          >
-          <div class="col-sm-10">
-            <input
-              type="text"
-              name="author"
-              class="form-control"
-              id="inputAuthor"
-            />
-          </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="author"
+            class="form-control"
+            id="inputAuthor"
+            required=""
+          />
+          <label>작성자</label>
         </div>
-        <div class="form-group row">
-          <label for="inputContent" class="col-sm-2 col-form-label"
-            ><strong>내용</strong></label
-          >
-          <div class="col-sm-10">
-            <textarea
-              type="text"
-              name="content"
-              class="form-control"
-              id="inputContent"
-            ></textarea>
-          </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="content"
+            class="form-control"
+            id="inputContent"
+            required=""
+          />
+          <label>내용</label>
         </div>
-        <div class="form-group row">
-          <label for="inputImage" class="col-sm-2 col-form-label"
-            ><strong>업로드</strong></label
-          >
-          <input name="image" type="file">
-          </div>
+        <div class="user-box">
+          <input type="file" name="image" required="" />
         </div>
-        <div class="row">
-          <div class="col-10 mr-1"></div>
-          <div class="col-auto">
-            <input
-              class="btn btn-primary"
-              type="submit"
-              role="button"
-              value="수정 하기"
-            />
-          </div>
-        </div>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          role="button"
+          value="수정하기"
+        />
       </form>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
   </body>
 </html>
