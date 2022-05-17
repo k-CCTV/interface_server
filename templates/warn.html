@@ -26,7 +26,7 @@
           </div>
         </div>
         <ul class="sidebar-list">
-          <li class="sidebar-list-item active">
+          <li class="sidebar-list-item">
             <a href="/">
               <span class="iconify" data-icon="ant-design:home-outlined" data-width="24" data-height="24"></span>
               <span>Home</span>
@@ -38,7 +38,7 @@
               <span>Danger</span>
             </a>
           </li>
-          <li class="sidebar-list-item">
+          <li class="sidebar-list-item active">
             <a href="/warn">
               <span class="iconify" data-icon="ph:traffic-signal-light" style="color: orange;" data-width="24" data-height="24"></span>
               <span>Warn</span>
@@ -66,7 +66,7 @@
       </div>
       <div class="app-content">
         <div class="app-content-header">
-          <h1 class="app-content-headerText">CCTV List</h1>
+          <h1 class="app-content-headerText">Warn List</h1>
           <button class="mode-switch" title="Switch Theme">
             <span class="iconify" data-icon="eva:moon-fill" data-width="24" data-height="24"></span>
           </button>
@@ -135,6 +135,7 @@
               </button></div>
           </div>
           {% for board in boards %}
+          {% if board.status == 2%}
           <div class="cctv-row">
             <button class="cell-more-button">
               <span class="iconify" data-icon="feather:more-vertical" data-width="18" data-height="18"></span>
@@ -166,6 +167,7 @@
             <div class="cctv-cell created_date"><span class="cell-label">작성 날짜:</span>{{ board.created_date | date:"Y-m-d h:i" }}</div>
             <div class="cctv-cell modified_date"><span class="cell-label">수정 날짜:</span>{{ board.modified_date | date:"Y-m-d h:i" }}</div>
           </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>

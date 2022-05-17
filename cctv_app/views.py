@@ -65,5 +65,21 @@ def delete(request,id):
 def test(request):
     return render(request,'test.html')
 
+def danger(request):
+    boards = {'boards': Board.objects.all()}
+    return render(request, 'danger.html', boards)
+
+def warn(request):
+    boards = {'boards': Board.objects.all()}
+    return render(request, 'warn.html', boards)
+
+def normal(request):
+    boards = {'boards': Board.objects.all()}
+    return render(request, 'normal.html', boards)
+
+def null(request):
+    boards = {'boards': Board.objects.all()}
+    return render(request, 'null.html', boards)
+
             
       
