@@ -60,12 +60,51 @@
       </div>
       <div class="app-content">
         <div class="app-content-header">
-          <h1 class="app-content-headerText">Detail of CCTV</h1>
+          <h1 class="app-content-headerText">{{board.title}}</h1>
           <button class="mode-switch" title="Switch Theme">
             <span class="iconify" data-icon="eva:moon-fill" data-width="24" data-height="24"></span>
           </button>
-          <button class="app-content-headerButton" onclick="window.location.href='/post'">Add Image</button>
-        </div>      
+          <button class="app-content-headerButton1" onclick="window.location.href='/post/edit/{{ board.id }}'">수정하기</button>
+          <button class="app-content-headerButton2" onclick="window.location.href='/post/delete/{{ board.id }}'">삭제하기</button>
+        </div>
+        <div class="info-content">
+          <ul class="info-list">
+            <li class="info-list-item">
+              <span class="iconify" data-icon="emojione-monotone:pencil" data-width="24" data-height="24"></span>
+              <span>작성자 : {{ board.author }}</span>
+            </li>
+            <li class="info-list-item">
+              <span class="iconify" data-icon="eva:question-mark-circle-outline" data-width="24" data-height="24"></span>
+              <span>상태 :</span>
+              {% if board.status == 1 %}
+              <span class="status normal">정상</span>
+              {% elif board.status == 2 %}
+              <span class="status warn">경고</span>
+              {% elif board.status == 3 %}
+              <span class="status danger">위험</span>
+              {% else %}
+              <span class="status disabled">NULL</span>
+              {% endif %}
+            </li>
+            <li class="info-list-item">
+              <span class="iconify" data-icon="ant-design:message-outlined" data-width="24" data-height="24"></span>
+              <span>설명 : {{ board.content }}</span>
+            </li>
+            <li class="info-list-item">
+              <span class="iconify" data-icon="bi:calendar-day" data-width="24" data-height="24"></span>
+              <span>수정일 : {{ board.modified_date | date:"Y-m-d h:i" }}</span>
+            </li>
+          </ul>
+        </div>
+        {% if board.fileType == ".mp4" %}
+          <video controls autoplay>
+            <source src="{{board.image.url}}" type="video/mp4" />
+            영상 안돼!
+          </video>
+          {% else %}
+          <img src="{{board.image.url}}" />
+          <br /><br />
+          {% endif %}   
       </div>
     </div>
     <script

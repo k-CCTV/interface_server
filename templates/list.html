@@ -118,7 +118,7 @@
             <div class="cctv-cell status-cell">상태<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
-            <div class="cctv-cell content">내용<button class="sort-button">
+            <div class="cctv-cell content">설명<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
             <div class="cctv-cell created_date">작성날짜<button class="sort-button">
@@ -156,7 +156,7 @@
               <span class="status disabled">NULL</span>
               {% endif %}
             </div>
-            <div class="cctv-cell content"><span class="cell-label">내용:</span>{{ board.content }}</div>
+            <div class="cctv-cell content"><span class="cell-label">설명:</span>{{ board.content }}</div>
             <div class="cctv-cell created_date"><span class="cell-label">작성 날짜:</span>{{ board.created_date | date:"Y-m-d h:i" }}</div>
             <div class="cctv-cell modified_date"><span class="cell-label">수정 날짜:</span>{{ board.modified_date | date:"Y-m-d h:i" }}</div>
           </div>
