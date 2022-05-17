@@ -3,7 +3,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>test</title>
+    <title>지능형 CCTV</title>
     <link
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
@@ -18,50 +18,55 @@
     />
   </head>
   <body>
-    <div class="form-box">
-      <h2>Image Uproad</h2>
-      <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="user-box">
-          <input
-            type="text"
-            name="title"
-            class="form-control"
-            id="inputTitle"
-            required=""
-          />
-          <label>제목</label>
+    <div class="app-container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="app-icon">
+            <span class="iconify" data-icon="bxs:cctv" data-width="24" data-height="24"></span>
+          </div>
         </div>
-        <div class="user-box">
-          <input
-            type="text"
-            name="author"
-            class="form-control"
-            id="inputAuthor"
-            required=""
-          />
-          <label>작성자</label>
-        </div>
-        <div class="user-box">
-          <input
-            type="text"
-            name="content"
-            class="form-control"
-            id="inputContent"
-            required=""
-          />
-          <label>내용</label>
-        </div>
-        <div class="user-box">
-          <input type="file" name="image" required="" />
-        </div>
-        <input
-          class="btn btn-primary"
-          type="submit"
-          role="button"
-          value="등록하기"
-        />
-      </form>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="/">
+              <span class="iconify" data-icon="ant-design:home-outlined" data-width="24" data-height="24"></span>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="iconify" data-icon="ph:traffic-signal-light" style="color: red;" data-width="24" data-height="24"></span>
+              <span>Danger</span>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="iconify" data-icon="ph:traffic-signal-light" style="color: orange;" data-width="24" data-height="24"></span>
+              <span>Warn</span>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#">
+              <span class="iconify" data-icon="ph:traffic-signal-light" style="color: green;" data-width="24" data-height="24"></span>
+              <span>Normal</span>
+            </a>
+          </li>
+          <li class="sidebar-list-item active">
+            <a href="/test">
+              <span class="iconify" data-icon="ph:traffic-signal-light" data-width="24" data-height="24"></span>
+              <span>None Specify</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="app-content">
+        <div class="app-content-header">
+          <h1 class="app-content-headerText">Detail of CCTV</h1>
+          <button class="mode-switch" title="Switch Theme">
+            <span class="iconify" data-icon="eva:moon-fill" data-width="24" data-height="24"></span>
+          </button>
+          <button class="app-content-headerButton" onclick="window.location.href='/post'">Add Image</button>
+        </div>      
+      </div>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
@@ -70,5 +75,8 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-  </body>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="{% static 'jsCss/test.js'%}"></script>
+  <body/>
+
 </html>

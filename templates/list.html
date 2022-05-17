@@ -51,7 +51,7 @@
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#">
+            <a href="/test">
               <span class="iconify" data-icon="ph:traffic-signal-light" data-width="24" data-height="24"></span>
               <span>None Specify</span>
             </a>
@@ -104,36 +104,36 @@
             </button>
           </div>
         </div>
-        <div class="products-area-wrapper tableView">
-          <div class="products-header">
-            <div class="product-cell image">
+        <div class="cctv-area-wrapper tableView">
+          <div class="cctv-header">
+            <div class="cctv-cell image">
               CCTV
               <button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button>
             </div>
-            <div class="product-cell author">작성자<button class="sort-button">
+            <div class="cctv-cell author">작성자<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
-            <div class="product-cell status-cell">상태<button class="sort-button">
+            <div class="cctv-cell status-cell">상태<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
-            <div class="product-cell content">내용<button class="sort-button">
+            <div class="cctv-cell content">내용<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
-            <div class="product-cell created_date">작성날짜<button class="sort-button">
+            <div class="cctv-cell created_date">작성날짜<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
-            <div class="product-cell modified_date">수정날짜<button class="sort-button">
+            <div class="cctv-cell modified_date">수정날짜<button class="sort-button">
                 <span class="iconify" data-icon="bx:sort-alt-2" data-width="24" data-height="24"></span>
               </button></div>
           </div>
           {% for board in boards %}
-          <div class="products-row">
+          <div class="cctv-row">
             <button class="cell-more-button">
               <span class="iconify" data-icon="feather:more-vertical" data-width="18" data-height="18"></span>
             </button>
-              <div class="product-cell image">
+              <div class="cctv-cell image">
                 {% if board.fileType == ".mp4" %}
                 <img src="media/images/thumbnail.png" />
                 {% else %}
@@ -143,8 +143,8 @@
                   <span>{{ board.title }}</span>
                 </a>
               </div>
-            <div class="product-cell author"><span class="cell-label">작성자</span>{{ board.author }}</div>
-            <div class="product-cell status-cell">
+            <div class="cctv-cell author"><span class="cell-label">작성자</span>{{ board.author }}</div>
+            <div class="cctv-cell status-cell">
               <span class="cell-label">상태:</span>
               {% if board.status == 1 %}
               <span class="status normal">정상</span>
@@ -156,9 +156,9 @@
               <span class="status disabled">NULL</span>
               {% endif %}
             </div>
-            <div class="product-cell content"><span class="cell-label">내용:</span>{{ board.content }}</div>
-            <div class="product-cell created_date"><span class="cell-label">작성 날짜:</span>{{ board.created_date | date:"Y-m-d h:i" }}</div>
-            <div class="product-cell modified_date"><span class="cell-label">수정 날짜:</span>{{ board.modified_date | date:"Y-m-d h:i" }}</div>
+            <div class="cctv-cell content"><span class="cell-label">내용:</span>{{ board.content }}</div>
+            <div class="cctv-cell created_date"><span class="cell-label">작성 날짜:</span>{{ board.created_date | date:"Y-m-d h:i" }}</div>
+            <div class="cctv-cell modified_date"><span class="cell-label">수정 날짜:</span>{{ board.modified_date | date:"Y-m-d h:i" }}</div>
           </div>
           {% endfor %}
         </div>
