@@ -33,27 +33,33 @@
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#">
+            <a href="/danger">
               <span class="iconify" data-icon="ph:traffic-signal-light" style="color: red;" data-width="24" data-height="24"></span>
               <span>Danger</span>
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#">
+            <a href="/warn">
               <span class="iconify" data-icon="ph:traffic-signal-light" style="color: orange;" data-width="24" data-height="24"></span>
               <span>Warn</span>
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="#">
+            <a href="/normal">
               <span class="iconify" data-icon="ph:traffic-signal-light" style="color: green;" data-width="24" data-height="24"></span>
               <span>Normal</span>
             </a>
           </li>
-          <li class="sidebar-list-item active">
+          <li class="sidebar-list-item">
+            <a href="/null">
+              <span class="iconify" data-icon="ph:traffic-signal-light" style="color: gray;" data-width="24" data-height="24"></span>
+              <span>Null</span>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
             <a href="/test">
               <span class="iconify" data-icon="ph:traffic-signal-light" data-width="24" data-height="24"></span>
-              <span>None Specify</span>
+              <span>Test Server</span>
             </a>
           </li>
         </ul>
@@ -96,7 +102,8 @@
             </li>
           </ul>
         </div>
-        {% if board.fileType == ".mp4" %}
+        <div class="info-image">
+          {% if board.fileType == ".mp4" %}
           <video controls autoplay>
             <source src="{{board.image.url}}" type="video/mp4" />
             영상 안돼!
@@ -104,7 +111,9 @@
           {% else %}
           <img src="{{board.image.url}}" />
           <br /><br />
-          {% endif %}   
+          {% endif %}
+        </div>
+           
       </div>
     </div>
     <script
@@ -113,6 +122,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="{% static 'jsCss/detail.js'%}"></script>
