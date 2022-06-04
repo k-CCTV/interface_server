@@ -180,25 +180,5 @@
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="{% static 'jsCss/list.js'%}"></script>
-    <script>
-      function searchFunc() {
-        let search = document.querySelector(".search-bar").value.toLowerCase();
-        let listInner = document.getElementsByClassName("cctv-row");
-        
-        for(let i = 0; i<listInner.length;i++){
-          title = listInner[i].getElementsByClassName("searchTitle");
-          author = listInner[i].getElementsByClassName("searchAuthor");
-          content = listInner[i].getElementsByClassName("searchContent");
-          if (title[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
-            author[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
-            content[0].innerHTML.toLowerCase().indexOf(search) != -1
-          ){
-            listInner[i].style.display = "flex"
-          } else {
-            listInner[i].style.display = "none"
-          }
-        }
-      }
-    </script>
   <body/>
 </html>

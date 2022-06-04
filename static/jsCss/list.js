@@ -1,3 +1,23 @@
+function searchFunc() {
+  let search = document.querySelector(".search-bar").value.toLowerCase();
+  let listInner = document.getElementsByClassName("cctv-row");
+
+  for (let i = 0; i < listInner.length; i++) {
+    title = listInner[i].getElementsByClassName("searchTitle");
+    author = listInner[i].getElementsByClassName("searchAuthor");
+    content = listInner[i].getElementsByClassName("searchContent");
+    if (
+      title[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
+      author[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
+      content[0].innerHTML.toLowerCase().indexOf(search) != -1
+    ) {
+      listInner[i].style.display = "flex";
+    } else {
+      listInner[i].style.display = "none";
+    }
+  }
+}
+
 document.querySelector(".jsFilter").addEventListener("click", function () {
   document.querySelector(".filter-menu").classList.toggle("active");
 });
