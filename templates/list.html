@@ -73,7 +73,7 @@
           <button class="app-content-headerButton" onclick="window.location.href='/post'">Add Image</button>
         </div>
         <div class="app-content-actions">
-          <input class="search-bar" placeholder="Search for title" type="text" >
+          <input class="search-bar" placeholder="Search for title" type="text" onkeyup = "searchFunc()" >
           <div class="app-content-actions-wrapper">
             <div class="filter-button-wrapper">
               <button class="action-button filter jsFilter"><span>Filter</span><span class="iconify" data-icon="line-md:image-twotone" data-width="24" data-height="24"></span></button>
@@ -145,11 +145,11 @@
                 {% else %}
                 <img src="{{board.image.url}}" />
                 {% endif %}
-                <a href="/post/{{ board.id }}">
-                  <span>{{ board.title }}</span>
+                <a href="/post/{{ board.id }}" id="searchTitle">
+                  <span class="searchTitle">{{ board.title }}</span>
                 </a>
               </div>
-            <div class="cctv-cell author"><span class="cell-label">작성자</span>{{ board.author }}</div>
+            <div class="cctv-cell author"><span class="cell-label">작성자</span><span class="searchAuthor">{{ board.author }}</span></div>
             <div class="cctv-cell status-cell">
               <span class="cell-label">상태:</span>
               {% if board.status == 1 %}
@@ -162,7 +162,7 @@
               <span class="status disabled">NULL</span>
               {% endif %}
             </div>
-            <div class="cctv-cell content"><span class="cell-label">설명:</span>{{ board.content }}</div>
+            <div class="cctv-cell content"><span class="cell-label">설명:</span><span class="searchContent">{{ board.content }}</span></div>
             <div class="cctv-cell created_date"><span class="cell-label">작성 날짜:</span>{{ board.created_date | date:"Y-m-d h:i" }}</div>
             <div class="cctv-cell modified_date"><span class="cell-label">수정 날짜:</span>{{ board.modified_date | date:"Y-m-d h:i" }}</div>
           </div>
@@ -180,5 +180,25 @@
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="{% static 'jsCss/list.js'%}"></script>
+    <script>
+      function searchFunc() {
+        let search = document.querySelector(".search-bar").value.toLowerCase();
+        let listInner = document.getElementsByClassName("cctv-row");
+        
+        for(let i = 0; i<listInner.length;i++){
+          title = listInner[i].getElementsByClassName("searchTitle");
+          author = listInner[i].getElementsByClassName("searchAuthor");
+          content = listInner[i].getElementsByClassName("searchContent");
+          if (title[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
+            author[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
+            content[0].innerHTML.toLowerCase().indexOf(search) != -1
+          ){
+            listInner[i].style.display = "flex"
+          } else {
+            listInner[i].style.display = "none"
+          }
+        }
+      }
+    </script>
   <body/>
 </html>
