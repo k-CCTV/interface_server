@@ -15,6 +15,7 @@ board_detail = BoardViewSet.as_view({
 })
 board_modify = BoardViewSet.as_view({
     'get': 'retrieve',
+    'post':'create',
     'put': 'update',
 })
 
@@ -22,6 +23,6 @@ urlpatterns = [
     path('', board_list),
     path('create', board_create),
     path('board/<int:pk>/',board_detail),
-    path('modify/<int:pk>/',board_modify),
+    path('modify/<int:pk>',board_modify),
    
 ]
