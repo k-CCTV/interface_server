@@ -9,6 +9,7 @@ class Board(models.Model):
     title = models.CharField(max_length=100, null=False)
     author = models.CharField(max_length=10, null=False)
     content = models.TextField(null=False)
+    password = models.CharField(max_length=20,null=False,default='1234')
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
     files = models.FileField(upload_to="",null=True)
