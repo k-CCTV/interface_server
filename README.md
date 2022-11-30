@@ -40,7 +40,7 @@
 
 ------
 
-## Demo 영상
+## 🎞️ Demo 영상
 
 - **List View & Grid View**
 
