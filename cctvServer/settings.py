@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import pymysql
-pymysql.install_as_MySQLdb()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,6 +22,9 @@ CORS_ORIGIN_WHITELIST = [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+DETECT_MEDIA_URL = "/media/detect/"
+DETECT_MEDIA_ROOT = os.path.join(BASE_DIR, "media", "detect")
 # BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
@@ -94,7 +94,7 @@ DATABASES = {
     	'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'cctvdatabase', 
         'USER': 'root', 
-        'PASSWORD': '1q2w3e4r', 
+        'PASSWORD': 'ti2018038033',
         'HOST': 'localhost', 
         'PORT': '3306', 
      } 
@@ -129,9 +129,7 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_L10N = True
-
-USE_TZ = False 
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

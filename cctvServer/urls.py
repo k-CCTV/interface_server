@@ -25,3 +25,4 @@ urlpatterns = [
 
 # 여기랑 settings에 MEDIA 관련 추가함
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.DETECT_MEDIA_ROOT)
